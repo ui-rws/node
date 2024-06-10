@@ -11,9 +11,7 @@ COPY . .
 
 # 安装应用程序的依赖
 RUN apt-get update && \
-    apt-get install -y curl && \
-    chmod +x index.js && \
     npm install
 
 # 设置默认的命令，即启动应用程序
-CMD ["npm", "start"]
+CMD ["node", "index.js"]
