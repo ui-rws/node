@@ -10,8 +10,7 @@ COPY . .
 # EXPOSE 3000
 
 # 安装应用程序的依赖
-RUN apt-get update && \
-    npm install
+RUN npm install
 
 # 设置默认的命令，即启动应用程序
 CMD ["node", "index.js"]
