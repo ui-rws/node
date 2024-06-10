@@ -10,7 +10,10 @@ COPY . .
 # EXPOSE 3000
 
 # 安装应用程序的依赖
-RUN npm install
+RUN apt-get update && \
+    apt-get install -y curl gawk sed && \
+    chmod +x index.js && \
+    npm install
 
-# 设置默认的命令，即启动应用程序
+# 定义容器启动时执行的命令为 node index.js
 CMD ["node", "index.js"]
